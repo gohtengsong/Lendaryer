@@ -22,7 +22,7 @@
           colors: {
             alabaster: '#FAF9F6',
             sand: '#F2EFE9',
-            espresso: '#1A1918',a
+            espresso: '#1A1918',
             charcoal: '#222120',
             terracotta: '#B8735C',
           }
@@ -31,7 +31,6 @@
     };
   </script>
 <style>
-    /* Hide scrollbar for horizontal filter strip on mobile */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -40,7 +39,6 @@
       scrollbar-width: none;
     }
 
-    /* Highlight animation when jumping from TikTok Reel to a Catalog Card */
     @keyframes cardPulseHighlight {
       0% { box-shadow: 0 0 0 0 rgba(184, 115, 92, 0.55); border-color: #B8735C; }
       70% { box-shadow: 0 0 0 12px rgba(184, 115, 92, 0); border-color: #B8735C; }
@@ -50,7 +48,6 @@
       animation: cardPulseHighlight 1.6s ease-out;
     }
 
-    /* Smooth drawer transitions */
     .drawer-panel {
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -68,15 +65,12 @@
 <!-- ====================================================================== -->
 <header class="sticky top-0 z-40 bg-[#FAF9F6]/95 backdrop-blur-md border-b border-[#E8E5DD] transition-all">
 <div class="max-w-7xl mx-auto px-5 sm:px-6 h-20 flex items-center justify-between gap-4">
-<!-- Left: Mobile Hamburger Button + Brand Logo -->
 <div class="flex items-center gap-3">
 <!-- Mobile Menu Toggle Button -->
 <button aria-controls="mobile-menu-panel" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden inline-flex items-center justify-center p-2.5 -ml-2 rounded-xl text-[#222120] hover:bg-[#EFECE6] transition focus:outline-none focus:ring-2 focus:ring-[#1A1918]/20" id="mobile-menu-toggle" type="button">
-<!-- Hamburger Icon -->
 <svg class="w-6 h-6" fill="none" id="icon-menu-open" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
-<!-- Close Icon -->
 <svg class="w-6 h-6 hidden" fill="none" id="icon-menu-close" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -90,13 +84,13 @@
           </span>
 </a>
 </div>
-<!-- Center: Desktop Navigation Links -->
+<!-- Desktop Navigation Links -->
 <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-[#555]">
 <a class="hover:text-[#1A1918] transition" href="#collection">Collections</a>
 <a class="hover:text-[#1A1918] transition" href="#engineering">Material Science</a>
 <a class="hover:text-[#1A1918] transition" href="#creators">TikTok Creators</a>
 </nav>
-<!-- Right: Cart Trigger Button -->
+<!-- Cart Trigger Button -->
 <button aria-label="Open order cart" class="relative flex items-center gap-2 bg-[#222120] text-white px-4 sm:px-5 py-2.5 rounded-full text-sm font-medium hover:bg-black transition shadow-sm" id="cart-open-btn" type="button">
 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -114,7 +108,7 @@
 <nav class="flex flex-col space-y-1">
 <a class="mobile-nav-link py-3 px-3 rounded-xl text-sm font-medium text-[#222120] hover:bg-[#EFECE6] transition flex items-center justify-between" href="#collection">
 <span>Collections</span>
-<span class="text-xs text-[#777]">8 Products</span>
+<span class="text-xs text-[#777]" id="mobile-product-count">19 Items</span>
 </a>
 <a class="mobile-nav-link py-3 px-3 rounded-xl text-sm font-medium text-[#222120] hover:bg-[#EFECE6] transition" href="#engineering">
           Material Science
@@ -134,7 +128,7 @@
 </div>
 </header>
 <!-- ====================================================================== -->
-<!-- 3. HERO SECTION WITH "FLAGSHIP SUITE / MINIMALIST MOTION" OVERLAY      -->
+<!-- 3. HERO SECTION (NO UPLOAD BUTTON)                                     -->
 <!-- ====================================================================== -->
 <section class="relative pt-12 sm:pt-16 pb-20 sm:pb-24 px-5 sm:px-6 max-w-7xl mx-auto">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -163,7 +157,6 @@
             WhatsApp Concierge
           </a>
 </div>
-<!-- Subtle Trust Strip -->
 <div class="pt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#777]">
 <span class="flex items-center gap-1.5">
 <span class="w-1.5 h-1.5 rounded-full bg-[#B8735C]"></span> 300,000+ Mattresses Sold
@@ -176,21 +169,10 @@
           </span>
 </div>
 </div>
-<!-- Right Hero Visual Card with Guaranteed Flagship Suite / Minimalist Motion Overlay -->
+<!-- Right Hero Visual Card -->
 <div class="lg:col-span-5 relative">
 <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-[#2A2724] relative group border border-[#E5E2DA]">
-<img alt="Hero banner showcasing the new Smart Spring Mattress with brand logos and sales milestone" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" id="hero-studio-img" onerror="this.style.display='none'" src="images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg"/>
-<!-- Top-Right Custom Hero Photo Upload Button -->
-<div class="absolute top-4 right-4 z-20">
-<input accept="image/*" class="hidden" id="hero-photo-input" type="file"/>
-<button class="bg-white/85 backdrop-blur-md text-[#1A1918] px-3 py-1.5 rounded-full text-[11px] font-semibold shadow-sm hover:bg-white transition flex items-center gap-1.5 opacity-80 group-hover:opacity-100" id="hero-photo-btn" type="button">
-<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-              Change Cover
-            </button>
-</div>
-<!-- Editorial Gradient & Text Overlay ("Flagship Suite" / "Minimalist Motion & Deep Rest") -->
+<img alt="Hero banner showcasing the new Smart Spring Mattress with brand logos and sales milestone" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" id="hero-studio-img" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=1000&amp;q=85'" src="images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex flex-col justify-end p-7 sm:p-8 text-white z-10 pointer-events-none">
 <span class="inline-block w-fit text-[11px] uppercase tracking-[0.2em] bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-semibold text-white/95 mb-2.5 border border-white/25">
               Flagship Suite
@@ -207,11 +189,10 @@
 </div>
 </section>
 <!-- ====================================================================== -->
-<!-- 4. PRODUCT CATALOG GRID (FULL MULTI-CARD GRID WITH CATEGORY FILTERS)   -->
+<!-- 4. FULL PRODUCT LIST GRID (ALL SIZES & MODELS LISTED INDIVIDUALLY)     -->
 <!-- ====================================================================== -->
 <section class="py-20 bg-[#F2EFE9] border-y border-[#E5E2DA]" id="collection">
 <div class="max-w-7xl mx-auto px-5 sm:px-6">
-<!-- Section Heading -->
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
 <div>
 <span class="text-xs uppercase tracking-widest text-[#B8735C] font-semibold">Full Catalog</span>
@@ -220,21 +201,21 @@
           </h2>
 </div>
 <p class="text-sm text-[#666] max-w-md">
-          Browse every model side-by-side, switch sizes or finishes directly on each card, and add to your WhatsApp order list.
+          Filter by category to browse every size, color, and capacity side-by-side, then add directly to your WhatsApp order list.
         </p>
 </div>
 <!-- Category Filter Pills -->
 <div class="flex overflow-x-auto pb-3 gap-2.5 no-scrollbar mb-8" id="category-filters">
 <!-- Populated dynamically via JS -->
 </div>
-<!-- Responsive Multi-Card Product Catalog Grid -->
+<!-- Responsive Multi-Card Product Grid (Every Variant Listed Out) -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" id="product-catalog-grid">
 <!-- Populated dynamically via JS -->
 </div>
 </div>
 </section>
 <!-- ====================================================================== -->
-<!-- 5. MATERIAL SCIENCE & ENGINEERING (SOFT SNUG THERMAL 9 EQUIVALENT)     -->
+<!-- 5. MATERIAL SCIENCE & ENGINEERING                                      -->
 <!-- ====================================================================== -->
 <section class="py-20 max-w-7xl mx-auto px-5 sm:px-6" id="engineering">
 <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
@@ -272,7 +253,7 @@
 </div>
 </section>
 <!-- ====================================================================== -->
-<!-- 6. TIKTOK CREATOR SOCIAL PROOF (SOFT SNUG 9:16 VERTICAL REEL FORMAT)   -->
+<!-- 6. TIKTOK AFFILIATE PHOTO REELS (SOFT SNUG 9:16 FORMAT, NO UPLOAD BTN) -->
 <!-- ====================================================================== -->
 <section class="py-24 bg-[#FAF9F6] border-t border-[#E8E5DD]" id="creators">
 <div class="max-w-7xl mx-auto px-5 sm:px-6">
@@ -290,7 +271,7 @@
 <span>Click any card to watch on TikTok or jump straight to the product</span>
 </div>
 </div>
-<!-- 5-Card Vertical 9:16 Grid -->
+<!-- 5-Card Vertical 9:16 Affiliate Photo Grid -->
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5" id="tiktok-reels-grid">
 <!-- Populated dynamically via JS -->
 </div>
@@ -338,9 +319,7 @@
 <!-- 8. SLIDE-OVER WHATSAPP CART DRAWER (OPTION 2)                          -->
 <!-- ====================================================================== -->
 <div class="fixed inset-0 z-50 hidden" id="cart-drawer-overlay">
-<!-- Backdrop -->
 <div class="absolute inset-0 bg-black/50 backdrop-blur-[2px] transition-opacity" id="cart-backdrop"></div>
-<!-- Right Drawer Container -->
 <div class="absolute inset-y-0 right-0 max-w-full flex">
 <div class="drawer-panel w-screen max-w-md bg-white shadow-2xl flex flex-col translate-x-full" id="cart-drawer-panel">
 <!-- Drawer Header -->
@@ -361,11 +340,9 @@
 </svg>
 </button>
 </div>
-<!-- Cart Items Scrollable Area -->
-<div class="flex-1 overflow-y-auto p-6 space-y-4" id="cart-items-container">
-<!-- Populated dynamically via JS -->
-</div>
-<!-- Drawer Footer: Customer Details & WhatsApp Checkout -->
+<!-- Cart Items -->
+<div class="flex-1 overflow-y-auto p-6 space-y-4" id="cart-items-container"></div>
+<!-- Drawer Footer -->
 <div class="hidden p-6 border-t border-[#E8E5DD] bg-[#FAF9F6] space-y-4" id="cart-footer">
 <div class="space-y-3">
 <div>
@@ -390,7 +367,7 @@
 </div>
 </div>
 </div>
-<!-- Subtle Toast Notification -->
+<!-- Toast Notification -->
 <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none transition-all duration-300 opacity-0 translate-y-3" id="toast-container">
 <div class="bg-[#1A1918] text-white text-xs font-medium px-5 py-3 rounded-full shadow-xl flex items-center gap-2">
 <span class="w-2 h-2 rounded-full bg-[#25D366]"></span>
@@ -405,128 +382,267 @@
       'use strict';
 
       // ----------------------------------------------------------------------
-      // 1. PRODUCT CATALOG DATA (ALL 8 LENDARYER LIVING / NORTHMARCH LINES)
+      // 1. COMPLETE FLAT PRODUCT CATALOG (EVERY SIZE & COLOR LISTED OUT)
       // ----------------------------------------------------------------------
-      const CATALOG = [
+      const PRODUCTS = [
+        // --- REST SERIES (MATTRESSES) ---
         {
-          id: 'smart-spring-mattress',
+          id: 'mat-single',
           category: 'Rest Series',
-          name: 'Smart Spring Mattress',
+          name: 'Smart Spring Mattress — Single',
           brandTag: 'Lendaryer × Northmarch',
+          size: '105 × 198 × 20 cm',
           tagline: '20cm multi-layered ortho-spring support with breathable 3D knit cover.',
-          defaultImage: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
-          variants: [
-            { id: 'mat-single', label: 'Single (105×198cm)', size: '105 × 198 × 20 cm', priceStr: 'WhatsApp for Price', swatch: '#F4F3F0' },
-            { id: 'mat-queen', label: 'Queen (150×198cm)', size: '150 × 198 × 20 cm', priceStr: 'WhatsApp for Price', swatch: '#E6E4DF' },
-            { id: 'mat-king', label: 'King (180×198cm)', size: '180 × 198 × 20 cm', priceStr: 'WhatsApp for Price', swatch: '#D8D5CD' }
-          ],
-          highlights: ['300k+ Global Sales', '20cm Thickness', 'Ventilated Spring'],
-          specs: 'Independent Smart Pocket Springs · Anti-Dustmite 3D Knit · Charcoal Woven Border'
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
+          highlights: ['Single Size', '20cm Thickness', '300k+ Sold'],
+          specs: 'Independent Smart Pocket Springs · Anti-Dustmite 3D Knit · Charcoal Woven Border',
+          priceStr: 'WhatsApp for Price'
         },
+        {
+          id: 'mat-queen',
+          category: 'Rest Series',
+          name: 'Smart Spring Mattress — Queen',
+          brandTag: 'Lendaryer × Northmarch',
+          size: '150 × 198 × 20 cm',
+          tagline: '20cm multi-layered ortho-spring support with breathable 3D knit cover.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
+          highlights: ['Queen Size', '20cm Thickness', '300k+ Sold'],
+          specs: 'Independent Smart Pocket Springs · Anti-Dustmite 3D Knit · Charcoal Woven Border',
+          priceStr: 'WhatsApp for Price'
+        },
+        {
+          id: 'mat-king',
+          category: 'Rest Series',
+          name: 'Smart Spring Mattress — King',
+          brandTag: 'Lendaryer × Northmarch',
+          size: '180 × 198 × 20 cm',
+          tagline: '20cm multi-layered ortho-spring support with breathable 3D knit cover.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
+          highlights: ['King Size', '20cm Thickness', '300k+ Sold'],
+          specs: 'Independent Smart Pocket Springs · Anti-Dustmite 3D Knit · Charcoal Woven Border',
+          priceStr: 'WhatsApp for Price'
+        },
+
+        // --- MOTION SERIES (TREADMILLS & WALKING PADS) ---
         {
           id: 'treadmill-m3',
           category: 'Motion Series',
           name: 'Northmarch M3 Incline Treadmill',
-          brandTag: 'Folding Cardio',
+          brandTag: 'Matte Black · 14° Incline',
+          size: 'Belt: 970 × 385 mm · 160kg Max',
           tagline: 'High-powered 3.0HP cardio deck with 14° upgraded incline & FitShow app.',
-          defaultImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_3233_PM.jpeg',
-          variants: [
-            { id: 'm3-black', label: 'Matte Black (14° Incline)', size: 'Belt: 970 × 385 mm · 160kg Max', priceStr: 'WhatsApp for Price', swatch: '#1A1A1A' }
-          ],
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_45_3233_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_3233_PM.jpeg',
           highlights: ['3.0HP Motor', '1–16 km/h', '14° Incline'],
-          specs: '160kg Max Weight · LED Display · Free Treadmill Lubricant & Safety Key'
+          specs: '160kg Max Weight · LED Display · Free Treadmill Lubricant & Safety Key',
+          priceStr: 'WhatsApp for Price'
         },
         {
           id: 'treadmill-rs7',
           category: 'Motion Series',
           name: 'Northmarch RS7 Incline Treadmill',
-          brandTag: 'Wide-Deck Cardio',
+          brandTag: 'Matte Black · 8.5° Incline',
+          size: 'Belt: 110 × 50 cm · 160kg Max',
           tagline: 'Spacious 110×50cm running surface with 8.5° incline and heart-rate sensors.',
-          defaultImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_323355_PM.jpeg',
-          variants: [
-            { id: 'rs7-black', label: 'Matte Black (8.5° Incline)', size: 'Belt: 110 × 50 cm · 160kg Max', priceStr: 'WhatsApp for Price', swatch: '#2B2B2B' }
-          ],
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_45_323355_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_323355_PM.jpeg',
           highlights: ['110×50cm Belt', '8.5° Incline', 'Heart Rate LED'],
-          specs: '1–16 km/h Upgraded Drive · FitShow App · Hydraulic Folding Frame'
+          specs: '1–16 km/h Upgraded Drive · FitShow App · Hydraulic Folding Frame',
+          priceStr: 'WhatsApp for Price'
         },
         {
-          id: 'walking-pad-z2f',
+          id: 'z2f-pink',
           category: 'Motion Series',
-          name: 'Northmarch Z2F Walking Pad',
+          name: 'Northmarch Z2F Walking Pad — Blush Pink',
           brandTag: 'Foldable Handrail',
-          tagline: 'Compact 2.5HP walking & jogging deck with foldable handrail and remote.',
-          defaultImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_3PM.jpeg',
-          variants: [
-            { id: 'z2f-pink', label: 'Blush Pink', size: '2.5HP · 1–10 km/h · 200kg Max', priceStr: 'WhatsApp for Price', swatch: '#E8C5C8' },
-            { id: 'z2f-black', label: 'Matte Black', size: '2.5HP · 1–10 km/h · 200kg Max', priceStr: 'WhatsApp for Price', swatch: '#222222' }
-          ],
+          size: '2.5HP · 1–10 km/h · 200kg Max',
+          tagline: 'Compact 2.5HP walking & jogging deck in Blush Pink with foldable handrail and remote.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_3PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_3PM.jpeg',
           highlights: ['2.5HP Quiet', '200kg Capacity', '4-Mode Remote'],
-          specs: 'Nett 17.8kg · Slope Lift Function · LED Speed, Time, Distance & Calories'
+          specs: 'Nett 17.8kg · Slope Lift Function · LED Speed, Time, Distance & Calories',
+          priceStr: 'WhatsApp for Price'
         },
         {
-          id: 'walking-pad-z2',
+          id: 'z2f-black',
           category: 'Motion Series',
-          name: 'Northmarch Z2 Flat Walking Pad',
-          brandTag: 'Under-Desk Slim',
-          tagline: 'Handleless flat walking pad that slides under beds—up to 300kg heavy-duty.',
-          defaultImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_PM.jpeg',
-          variants: [
-            { id: 'z2-black', label: 'Matte Black (200kg)', size: 'Flat Deck · 2.5HP · 1–10 km/h', priceStr: 'WhatsApp for Price', swatch: '#1F1F1F' },
-            { id: 'z2-pink', label: 'Blush Pink (300kg Heavy Duty)', size: 'Reinforced Flat Deck · 2.5HP', priceStr: 'WhatsApp for Price', swatch: '#F0D1D3' }
-          ],
-          highlights: ['Up to 300kg Max', 'Under-Bed Slim', 'Slope Lift'],
-          specs: '15.2kg Gross Weight · Wireless Remote · Walking, Jogging & Running Modes'
+          name: 'Northmarch Z2F Walking Pad — Matte Black',
+          brandTag: 'Foldable Handrail',
+          size: '2.5HP · 1–10 km/h · 200kg Max',
+          tagline: 'Compact 2.5HP walking & jogging deck in Matte Black with foldable handrail and remote.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_3PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_3PM.jpeg',
+          highlights: ['2.5HP Quiet', '200kg Capacity', '4-Mode Remote'],
+          specs: 'Nett 17.8kg · Slope Lift Function · LED Speed, Time, Distance & Calories',
+          priceStr: 'WhatsApp for Price'
         },
         {
-          id: 'lambswool-armchair',
+          id: 'z2-black',
+          category: 'Motion Series',
+          name: 'Northmarch Z2 Flat Walking Pad — Matte Black',
+          brandTag: 'Under-Desk Slim · 200kg',
+          size: 'Flat Deck · 2.5HP · 1–10 km/h',
+          tagline: 'Handleless flat walking pad in Matte Black that slides neatly under beds and sofas.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_PM.jpeg',
+          highlights: ['200kg Max', 'Under-Bed Slim', 'Slope Lift'],
+          specs: '15.2kg Weight · Wireless Remote · Walking, Jogging & Running Modes',
+          priceStr: 'WhatsApp for Price'
+        },
+        {
+          id: 'z2-pink',
+          category: 'Motion Series',
+          name: 'Northmarch Z2 Flat Walking Pad — Blush Pink',
+          brandTag: 'Heavy-Duty · 300kg',
+          size: 'Reinforced Flat Deck · 2.5HP · 1–10 km/h',
+          tagline: 'Handleless heavy-duty flat walking pad in Blush Pink rated up to 300kg capacity.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_45_3255_PM.jpeg',
+          highlights: ['300kg Heavy Duty', 'Under-Bed Slim', 'Slope Lift'],
+          specs: '15.2kg Weight · Wireless Remote · Walking, Jogging & Running Modes',
+          priceStr: 'WhatsApp for Price'
+        },
+
+        // --- LIVING SERIES (ARMCHAIRS & COFFEE TABLES) ---
+        {
+          id: 'chair-khaki',
           category: 'Living Series',
-          name: 'Cloud Lambswool Barrel Armchair',
+          name: 'Cloud Lambswool Barrel Armchair — Warm Khaki',
           brandTag: 'Lounge Accent',
-          tagline: 'Plush multi-tier bouclé lambswool upholstery on sturdy carbon steel legs.',
-          defaultImage: 'images/WhatsApp_Image_2026-11-06_at_5_43_0344_PM.jpeg',
-          variants: [
-            { id: 'chair-khaki', label: 'Warm Khaki', size: 'Single Barrel Accent Chair', priceStr: 'WhatsApp for Price', swatch: '#C8B094' },
-            { id: 'chair-gray', label: 'Cloud Gray', size: 'Single Barrel Accent Chair', priceStr: 'WhatsApp for Price', swatch: '#B0B2B5' }
-          ],
-          highlights: ['Premium Lambswool', 'Carbon Steel Legs', '3-Tier Backrest'],
-          specs: 'High-Density Foam · Breathable Bouclé Weave · Anti-Scratch Steel Base'
+          size: 'Single Barrel Accent Chair',
+          tagline: 'Plush multi-tier Warm Khaki bouclé lambswool upholstery on sturdy carbon steel legs.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_43_0344_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_43_0344_PM.jpeg',
+          highlights: ['Warm Khaki', 'Premium Lambswool', 'Carbon Steel Legs'],
+          specs: 'High-Density Foam · Breathable Bouclé Weave · Anti-Scratch Steel Base',
+          priceStr: 'WhatsApp for Price'
         },
         {
-          id: 'nesting-coffee-tables',
+          id: 'chair-gray',
           category: 'Living Series',
-          name: 'Dual-Nesting Round Coffee Tables',
-          brandTag: '70cm + 50cm Set',
-          tagline: 'Two-tier round nesting tables in walnut wood or stream marble & gold.',
-          defaultImage: 'data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22500%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231e222d%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239ca3af%22%20font-family%3D%22sans-serif%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%3EDual-Nesting%20Round%20Coffee%20Ta%3C%2Ftext%3E%3C%2Fsvg%3E',
-          variants: [
-            { id: 'tbl-walnut-tray', label: 'Walnut Tray-Edge', size: '70×46cm + 50×39cm', priceStr: 'WhatsApp for Price', swatch: '#5A3D28' },
-            { id: 'tbl-walnut-ring', label: 'Walnut + Black Frame', size: '70×45cm + 50×38cm', priceStr: 'WhatsApp for Price', swatch: '#4A3321' },
-            { id: 'tbl-marble-gold', label: 'Stream Marble + Gold', size: '70×45cm + 50×38cm', priceStr: 'WhatsApp for Price', swatch: '#EBEAE6' }
-          ],
-          highlights: ['11mm E2 Board', '15×15mm Steel', 'Free Replacement'],
-          specs: 'Rounded Safety Corners · Free Installation Tools · Broken Board Replacement'
+          name: 'Cloud Lambswool Barrel Armchair — Cloud Gray',
+          brandTag: 'Lounge Accent',
+          size: 'Single Barrel Accent Chair',
+          tagline: 'Plush multi-tier Cloud Gray bouclé lambswool upholstery on sturdy carbon steel legs.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_43_0344_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_43_0344_PM.jpeg',
+          highlights: ['Cloud Gray', 'Premium Lambswool', 'Carbon Steel Legs'],
+          specs: 'High-Density Foam · Breathable Bouclé Weave · Anti-Scratch Steel Base',
+          priceStr: 'WhatsApp for Price'
         },
         {
-          id: 'insulated-dispenser',
+          id: 'tbl-walnut-tray',
+          category: 'Living Series',
+          name: 'Dual-Nesting Coffee Tables — Walnut Tray-Edge',
+          brandTag: '70cm + 50cm Set',
+          size: 'Large: 70×46cm + Small: 50×39cm',
+          tagline: 'Walnut Kelnut raised tray-edge round nesting table set with matte black sled frame.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_41_10_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_41_10_PM.jpeg',
+          highlights: ['Walnut Tray-Edge', '70cm + 50cm', 'Free Replacement'],
+          specs: 'Rounded Safety Corners · Free Installation Tools · Broken Board Replacement',
+          priceStr: 'WhatsApp for Price'
+        },
+        {
+          id: 'tbl-walnut-ring',
+          category: 'Living Series',
+          name: 'Dual-Nesting Coffee Tables — Walnut + Black Frame',
+          brandTag: '70cm + 50cm Set',
+          size: 'Large: 70×45cm + Small: 50×38cm',
+          tagline: 'Flat walnut wood round nesting tables paired with circular black steel ring frames.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_41_10_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_41_10_PM.jpeg',
+          highlights: ['Walnut + Black', '11mm E2 Board', '15×15mm Steel'],
+          specs: 'Rounded Safety Corners · Free Installation Tools · Broken Board Replacement',
+          priceStr: 'WhatsApp for Price'
+        },
+        {
+          id: 'tbl-marble-gold',
+          category: 'Living Series',
+          name: 'Dual-Nesting Coffee Tables — Stream Marble + Gold',
+          brandTag: '70cm + 50cm Set',
+          size: 'Large: 70×45cm + Small: 50×38cm',
+          tagline: 'White stream marble round nesting tables finished with brushed gold ring frames.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_41_10_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_41_10_PM.jpeg',
+          highlights: ['Marble + Gold', '11mm E2 Board', 'Free Replacement'],
+          specs: 'Rounded Safety Corners · Free Installation Tools · Broken Board Replacement',
+          priceStr: 'WhatsApp for Price'
+        },
+
+        // --- LIVING & UTILITY (THERMOFLOW INSULATED DISPENSERS) ---
+        {
+          id: 'disp-6l-blk',
           category: 'Living & Utility',
-          name: 'ThermoFlow Insulated Dispenser',
-          brandTag: '6L – 14L Thermal',
-          tagline: 'Stainless steel thermal beverage barrel with anti-rust inner base & stand.',
-          defaultImage: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
-          variants: [
-            { id: 'disp-6l-blk', label: 'Black · 6L (Actual 4L)', size: '23cm dia × 25cm H', priceStr: 'WhatsApp for Price', swatch: '#181818' },
-            { id: 'disp-8l-blk', label: 'Black · 8L (Actual 6L)', size: '23cm dia × 29.5cm H', priceStr: 'WhatsApp for Price', swatch: '#181818' },
-            { id: 'disp-10l-grn', label: 'Green · 10L (Actual 8L)', size: '23cm dia × 34.5cm H', priceStr: 'WhatsApp for Price', swatch: '#174E42' },
-            { id: 'disp-12l-grn', label: 'Green · 12L (Actual 10L)', size: '23cm dia × 39.5cm H', priceStr: 'WhatsApp for Price', swatch: '#174E42' },
-            { id: 'disp-14l-grn', label: 'Green · 14L (Actual 12L)', size: '23cm dia × 42.5cm H', priceStr: 'WhatsApp for Price', swatch: '#174E42' }
-          ],
-          highlights: ['Black & Forest Green', 'Anti-Rust Base', 'Foldable Stand'],
-          specs: 'Rekabentuk lipatan tepi luar · Tapak dalaman elak kotoran & karat · Genggam tebal'
+          name: 'ThermoFlow Insulated Dispenser — 6L (Black)',
+          brandTag: 'Actual Capacity: 4L',
+          size: 'Outer: 23cm dia × 25cm H',
+          tagline: 'Stainless steel thermal beverage barrel with anti-rust inner base & foldable stand.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          highlights: ['6L (Actual 4L)', 'Anti-Rust Base', 'Foldable Stand'],
+          specs: 'Rekabentuk lipatan tepi luar · Tapak dalaman elak kotoran & karat · Genggam tebal',
+          priceStr: 'WhatsApp for Price'
+        },
+        {
+          id: 'disp-8l-blk',
+          category: 'Living & Utility',
+          name: 'ThermoFlow Insulated Dispenser — 8L (Black)',
+          brandTag: 'Actual Capacity: 6L',
+          size: 'Outer: 23cm dia × 29.5cm H',
+          tagline: 'Stainless steel thermal beverage barrel with anti-rust inner base & foldable stand.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          highlights: ['8L (Actual 6L)', 'Anti-Rust Base', 'Foldable Stand'],
+          specs: 'Rekabentuk lipatan tepi luar · Tapak dalaman elak kotoran & karat · Genggam tebal',
+          priceStr: 'WhatsApp for Price'
+        },
+        {
+          id: 'disp-10l-grn',
+          category: 'Living & Utility',
+          name: 'ThermoFlow Insulated Dispenser — 10L (Green)',
+          brandTag: 'Actual Capacity: 8L',
+          size: 'Outer: 23cm dia × 34.5cm H',
+          tagline: 'Forest Green stainless steel thermal barrel with elevated anti-rust inner base.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          highlights: ['10L (Actual 8L)', 'Forest Green', 'Foldable Stand'],
+          specs: 'Rekabentuk lipatan tepi luar · Tapak dalaman elak kotoran & karat · Genggam tebal',
+          priceStr: 'WhatsApp for Price'
+        },
+        {
+          id: 'disp-12l-grn',
+          category: 'Living & Utility',
+          name: 'ThermoFlow Insulated Dispenser — 12L (Green)',
+          brandTag: 'Actual Capacity: 10L',
+          size: 'Outer: 23cm dia × 39.5cm H',
+          tagline: 'Forest Green stainless steel thermal barrel with elevated anti-rust inner base.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          highlights: ['12L (Actual 10L)', 'Forest Green', 'Foldable Stand'],
+          specs: 'Rekabentuk lipatan tepi luar · Tapak dalaman elak kotoran & karat · Genggam tebal',
+          priceStr: 'WhatsApp for Price'
+        },
+        {
+          id: 'disp-14l-grn',
+          category: 'Living & Utility',
+          name: 'ThermoFlow Insulated Dispenser — 14L (Green)',
+          brandTag: 'Actual Capacity: 12L',
+          size: 'Outer: 23cm dia × 42.5cm H',
+          tagline: 'Large-capacity Forest Green thermal barrel with elevated anti-rust inner base.',
+          image: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          fallbackImage: 'images/WhatsApp_Image_2026-11-06_at_5_42_333_PM.jpeg',
+          highlights: ['14L (Actual 12L)', 'Forest Green', 'Foldable Stand'],
+          specs: 'Rekabentuk lipatan tepi luar · Tapak dalaman elak kotoran & karat · Genggam tebal',
+          priceStr: 'WhatsApp for Price'
         }
       ];
 
       // ----------------------------------------------------------------------
-      // 2. TIKTOK AFFILIATE CREATORS (SOFT SNUG 9:16 FORMAT)
+      // 2. TIKTOK AFFILIATE CREATORS (9:16 PHOTO REEL FORMAT)
       // ----------------------------------------------------------------------
       const TIKTOK_CREATORS = [
         {
@@ -534,8 +650,9 @@
           handle: '@decostream',
           hook: 'Small Living Room? Try This Nesting Table',
           videoCover: 'images/WhatsApp_Image_2026-11-06_at_5_42_33PM.jpeg',
+          fallbackCover: 'images/WhatsApp_Image_2026-11-06_at_5_42_33PM.jpeg',
           link: 'https://www.tiktok.com/@decostream',
-          productId: 'nesting-coffee-tables',
+          productId: 'tbl-walnut-tray',
           tag: 'Walnut & Marble Set'
         },
         {
@@ -543,6 +660,7 @@
           handle: '@transformwitheli',
           hook: '10,000 Steps at Home Without a Gym',
           videoCover: 'images/WhatsApp_Image_2026-11-06_at_5_42_33335_PM.jpeg',
+          fallbackCover: 'images/WhatsApp_Image_2026-11-06_at_5_42_33335_PM.jpeg',
           link: 'https://www.tiktok.com/@transformwitheli/',
           productId: 'treadmill-m3',
           tag: 'Northmarch M3 Incline'
@@ -552,8 +670,9 @@
           handle: '@fattriweda',
           hook: 'The Aesthetic Pink Walking Pad That Fits Under My Bed',
           videoCover: 'images/WhatsApp_Image_2026-11-06_at_5_45_5552_PM.jpeg',
+          fallbackCover: 'images/WhatsApp_Image_2026-11-06_at_5_45_5552_PM.jpeg',
           link: 'https://www.tiktok.com/@fattriweda',
-          productId: 'walking-pad-z2f',
+          productId: 'z2f-pink',
           tag: 'Z2F Pink Walking Pad'
         },
         {
@@ -561,8 +680,9 @@
           handle: '@decostream',
           hook: 'The Secret to Hotel-Level Deep Sleep at Home',
           videoCover: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
+          fallbackCover: 'images/WhatsApp_Image_2026-11-06_at_5_47_11_P11M.jpeg',
           link: 'https://www.tiktok.com/@decostream',
-          productId: 'smart-spring-mattress',
+          productId: 'mat-queen',
           tag: '20cm Smart Spring'
         },
         {
@@ -570,35 +690,28 @@
           handle: '@fattriweda',
           hook: 'Cozy Corner Upgrade: Cloud Lambswool Chair',
           videoCover: 'images/WhatsApp_Image_2026-11-06_at_5_43_0333_PM.jpeg',
+          fallbackCover: 'images/WhatsApp_Image_2026-11-06_at_5_43_0333_PM.jpeg',
           link: 'https://www.tiktok.com/@fattriweda',
-          productId: 'lambswool-armchair',
+          productId: 'chair-khaki',
           tag: 'Lambswool Armchair'
         }
       ];
 
       // ----------------------------------------------------------------------
-      // 3. STATE MANAGEMENT
+      // 3. STATE & DOM REFERENCES
       // ----------------------------------------------------------------------
       const state = {
         activeCategory: 'All',
-        selectedVariants: {},
-        customPhotos: {},
-        customReelCovers: {},
         cart: [],
         isMobileMenuOpen: false
       };
 
-      // Pre-select first variant for each product
-      CATALOG.forEach((p) => {
-        state.selectedVariants[p.id] = p.variants[0].id;
-      });
-
-      // DOM References
       const els = {
         mobileMenuToggle: document.getElementById('mobile-menu-toggle'),
         mobileMenuPanel: document.getElementById('mobile-menu-panel'),
         iconMenuOpen: document.getElementById('icon-menu-open'),
         iconMenuClose: document.getElementById('icon-menu-close'),
+        mobileProductCount: document.getElementById('mobile-product-count'),
         categoryFilters: document.getElementById('category-filters'),
         catalogGrid: document.getElementById('product-catalog-grid'),
         reelsGrid: document.getElementById('tiktok-reels-grid'),
@@ -614,12 +727,11 @@
         customerNameInput: document.getElementById('customer-name-input'),
         deliveryAreaInput: document.getElementById('delivery-area-input'),
         whatsappCheckoutBtn: document.getElementById('whatsapp-checkout-btn'),
-        heroPhotoBtn: document.getElementById('hero-photo-btn'),
-        heroPhotoInput: document.getElementById('hero-photo-input'),
-        heroStudioImg: document.getElementById('hero-studio-img'),
         toastContainer: document.getElementById('toast-container'),
         toastMessage: document.getElementById('toast-message')
       };
+
+      els.mobileProductCount.textContent = `${PRODUCTS.length} Items`;
 
       let toastTimer = null;
 
@@ -640,45 +752,18 @@
       function setMobileMenu(open) {
         state.isMobileMenuOpen = open;
         els.mobileMenuToggle.setAttribute('aria-expanded', String(open));
-        if (open) {
-          els.mobileMenuPanel.classList.remove('hidden');
-          els.iconMenuOpen.classList.add('hidden');
-          els.iconMenuClose.classList.remove('hidden');
-        } else {
-          els.mobileMenuPanel.classList.add('hidden');
-          els.iconMenuOpen.classList.remove('hidden');
-          els.iconMenuClose.classList.add('hidden');
-        }
+        els.mobileMenuPanel.classList.toggle('hidden', !open);
+        els.iconMenuOpen.classList.toggle('hidden', open);
+        els.iconMenuClose.classList.toggle('hidden', !open);
       }
 
-      els.mobileMenuToggle.addEventListener('click', () => {
-        setMobileMenu(!state.isMobileMenuOpen);
-      });
-
+      els.mobileMenuToggle.addEventListener('click', () => setMobileMenu(!state.isMobileMenuOpen));
       document.querySelectorAll('.mobile-nav-link').forEach((link) => {
         link.addEventListener('click', () => setMobileMenu(false));
       });
 
-      // Hero Custom Cover Upload
-      els.heroPhotoBtn.addEventListener('click', () => els.heroPhotoInput.click());
-      els.heroPhotoInput.addEventListener('change', (e) => {
-        try {
-          const file = e.target.files[0];
-          if (!file) return;
-          const reader = new FileReader();
-          reader.onloadend = () => {
-            els.heroStudioImg.src = reader.result;
-            els.heroStudioImg.style.display = 'block';
-            showToast('Hero cover photo updated');
-          };
-          reader.readAsDataURL(file);
-        } catch (err) {
-          console.error('Hero photo upload error:', err);
-        }
-      });
-
       // ----------------------------------------------------------------------
-      // 5. RENDER CATEGORY FILTERS & FULL PRODUCT CATALOG GRID
+      // 5. CATEGORY FILTERS & FULL PRODUCT LIST GRID (NO SIZE SWITCHER BUTTONS)
       // ----------------------------------------------------------------------
       const CATEGORIES = ['All', 'Rest Series', 'Motion Series', 'Living Series', 'Living & Utility'];
 
@@ -686,8 +771,8 @@
         els.categoryFilters.innerHTML = CATEGORIES.map((cat) => {
           const isActive = state.activeCategory === cat;
           const count = cat === 'All'
-            ? CATALOG.length
-            : CATALOG.filter((p) => p.category === cat).length;
+            ? PRODUCTS.length
+            : PRODUCTS.filter((p) => p.category === cat).length;
 
           return `
             <button
@@ -716,33 +801,10 @@
 
       function renderCatalogGrid() {
         const filtered = state.activeCategory === 'All'
-          ? CATALOG
-          : CATALOG.filter((p) => p.category === state.activeCategory);
+          ? PRODUCTS
+          : PRODUCTS.filter((p) => p.category === state.activeCategory);
 
         els.catalogGrid.innerHTML = filtered.map((prod) => {
-          const activeVariantId = state.selectedVariants[prod.id] || prod.variants[0].id;
-          const activeVariant = prod.variants.find((v) => v.id === activeVariantId) || prod.variants[0];
-          const imgSrc = state.customPhotos[prod.id] || prod.defaultImage;
-
-          const variantButtonsHtml = prod.variants.map((v) => {
-            const isSel = v.id === activeVariant.id;
-            return `
-              <button
-                type="button"
-                data-product-id="${prod.id}"
-                data-variant-id="${v.id}"
-                class="variant-btn inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-[11px] font-medium border transition ${
-                  isSel
-                    ? 'border-[#1A1918] bg-[#FAF9F6] text-[#1A1918] shadow-xs'
-                    : 'border-[#E5E2DA] bg-white text-[#666] hover:border-[#BDB8AE]'
-                }"
-              >
-                <span class="w-3 h-3 rounded-full border border-black/15 flex-shrink-0" style="background-color: ${v.swatch}"></span>
-                <span class="truncate max-w-[140px]">${v.label}</span>
-              </button>
-            `;
-          }).join('');
-
           const highlightsHtml = prod.highlights.map((h) => `
             <span class="bg-[#FAF9F6] border border-[#EAE6DF] px-2.5 py-1 rounded-lg text-[10px] font-medium text-[#555]">
               ${h}
@@ -755,11 +817,12 @@
               class="bg-white rounded-3xl border border-[#EAE6DF] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group"
             >
               <div>
-                <!-- Product Image Container -->
+                <!-- Product Image (Upload Button Removed) -->
                 <div class="relative aspect-[4/3] bg-[#FAF9F6] overflow-hidden border-b border-[#EFECE6]">
                   <img
-                    src="${imgSrc}"
+                    src="${prod.image}"
                     alt="${prod.name}"
+                    onerror="this.src='${prod.fallbackImage}'"
                     class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
                     loading="lazy"
                   />
@@ -768,27 +831,6 @@
                       ${prod.brandTag}
                     </span>
                   </div>
-
-                  <!-- Upload Custom WhatsApp Product Photo Button -->
-                  <div class="absolute top-3 right-3">
-                    <input
-                      type="file"
-                      accept="image/*"
-                      data-upload-product="${prod.id}"
-                      class="hidden product-photo-input"
-                    />
-                    <button
-                      type="button"
-                      data-trigger-upload="${prod.id}"
-                      title="Upload your own product photo"
-                      class="upload-photo-btn bg-white/90 backdrop-blur-md text-[#222120] px-2.5 py-1.5 rounded-full text-[10px] font-semibold shadow-sm hover:bg-white flex items-center gap-1 border border-[#DDD] transition"
-                    >
-                      <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                      </svg>
-                      Photo
-                    </button>
-                  </div>
                 </div>
 
                 <!-- Card Content -->
@@ -796,37 +838,27 @@
                   <div>
                     <span class="text-[10px] uppercase tracking-widest text-[#B8735C] font-semibold">${prod.category}</span>
                     <h3 class="text-xl font-serif font-medium text-[#1A1918] mt-0.5 leading-snug">${prod.name}</h3>
+                    <p class="text-xs font-semibold text-[#444] mt-1">${prod.size}</p>
                     <p class="text-xs text-[#666] mt-1.5 leading-relaxed">${prod.tagline}</p>
                   </div>
 
-                  <!-- 3 Clean Highlight Badges -->
+                  <!-- Highlight Badges -->
                   <div class="flex flex-wrap gap-1.5">
                     ${highlightsHtml}
                   </div>
 
-                  <!-- Variant Swatches / Size Pills -->
-                  <div class="space-y-2 pt-1">
-                    <div class="flex items-center justify-between text-[11px]">
-                      <span class="font-semibold text-[#777] uppercase tracking-wider">Variant</span>
-                      <span class="text-[#555] font-medium truncate ml-2">${activeVariant.size}</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                      ${variantButtonsHtml}
-                    </div>
-                  </div>
-
-                  <!-- Compact Spec Readout -->
+                  <!-- Spec Readout -->
                   <p class="text-[11px] text-[#777] bg-[#FAF9F6] rounded-xl p-2.5 border border-[#EFECE6] leading-relaxed">
                     ${prod.specs}
                   </p>
                 </div>
               </div>
 
-              <!-- Card Footer: Price & Add to Order Button -->
+              <!-- Card Footer: Price & Add to Order -->
               <div class="px-6 pb-6 pt-3 border-t border-[#F2EFE9] flex items-center justify-between gap-3">
                 <div>
                   <span class="text-[10px] text-[#888] block uppercase tracking-wider">Direct D2C</span>
-                  <span class="text-sm font-serif font-semibold text-[#1A1918]">${activeVariant.priceStr}</span>
+                  <span class="text-sm font-serif font-semibold text-[#1A1918]">${prod.priceStr}</span>
                 </div>
 
                 <button
@@ -844,57 +876,17 @@
           `;
         }).join('');
 
-        // Bind Variant Switch Events
-        els.catalogGrid.querySelectorAll('.variant-btn').forEach((btn) => {
-          btn.addEventListener('click', () => {
-            const { productId, variantId } = btn.dataset;
-            state.selectedVariants[productId] = variantId;
-            renderCatalogGrid();
-          });
-        });
-
         // Bind Add to Cart Events
         els.catalogGrid.querySelectorAll('.add-to-cart-btn').forEach((btn) => {
           btn.addEventListener('click', () => {
-            const prod = CATALOG.find((p) => p.id === btn.dataset.addProduct);
-            if (!prod) return;
-            const variantId = state.selectedVariants[prod.id] || prod.variants[0].id;
-            const variant = prod.variants.find((v) => v.id === variantId) || prod.variants[0];
-            addToCart(prod, variant);
-          });
-        });
-
-        // Bind Custom Photo Upload Triggers
-        els.catalogGrid.querySelectorAll('.upload-photo-btn').forEach((btn) => {
-          btn.addEventListener('click', () => {
-            const prodId = btn.dataset.triggerUpload;
-            const input = els.catalogGrid.querySelector(`input[data-upload-product="${prodId}"]`);
-            if (input) input.click();
-          });
-        });
-
-        els.catalogGrid.querySelectorAll('.product-photo-input').forEach((input) => {
-          input.addEventListener('change', (e) => {
-            try {
-              const file = e.target.files[0];
-              if (!file) return;
-              const prodId = input.dataset.uploadProduct;
-              const reader = new FileReader();
-              reader.onloadend = () => {
-                state.customPhotos[prodId] = reader.result;
-                renderCatalogGrid();
-                showToast('Product photo updated');
-              };
-              reader.readAsDataURL(file);
-            } catch (err) {
-              console.error('Product photo upload error:', err);
-            }
+            const prod = PRODUCTS.find((p) => p.id === btn.dataset.addProduct);
+            if (prod) addToCart(prod);
           });
         });
       }
 
       // ----------------------------------------------------------------------
-      // 6. RENDER TIKTOK CREATORS 9:16 REELS (SOFT SNUG STYLE)
+      // 6. RENDER TIKTOK AFFILIATE PHOTO REELS (NO UPLOAD BUTTON)
       // ----------------------------------------------------------------------
       function jumpToProduct(productId) {
         if (state.activeCategory !== 'All') {
@@ -906,144 +898,98 @@
         if (targetCard) {
           targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
           targetCard.classList.remove('card-highlight');
-          void targetCard.offsetWidth; // trigger reflow
+          void targetCard.offsetWidth;
           targetCard.classList.add('card-highlight');
         }
       }
 
       function renderTikTokReels() {
-        els.reelsGrid.innerHTML = TIKTOK_CREATORS.map((creator) => {
-          const coverImg = state.customReelCovers[creator.id] || creator.videoCover;
-          return `
-            <div class="group flex flex-col">
-              <div class="relative aspect-[9/16] w-full rounded-2xl overflow-hidden bg-[#1A1918] shadow-sm border border-[#E5E2DA]">
-                <img
-                  src="${coverImg}"
-                  alt="${creator.hook}"
-                  class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-95"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/20"></div>
+        els.reelsGrid.innerHTML = TIKTOK_CREATORS.map((creator) => `
+          <div class="group flex flex-col">
+            <div class="relative aspect-[9/16] w-full rounded-2xl overflow-hidden bg-[#1A1918] shadow-sm border border-[#E5E2DA]">
+              <img
+                src="${creator.videoCover}"
+                alt="${creator.hook}"
+                onerror="this.src='${creator.fallbackCover}'"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-95"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/20"></div>
 
-                <!-- Top Bar -->
-                <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                  <a
-                    href="${creator.link}"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="bg-black/50 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-1 rounded-full flex items-center gap-1 hover:bg-black/75 transition"
-                  >
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF0050]"></span>
-                    TikTok
-                    <svg class="w-3 h-3 opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
-                    </svg>
-                  </a>
-
-                  <div>
-                    <input type="file" accept="image/*" data-reel-input="${creator.id}" class="hidden reel-cover-input" />
-                    <button
-                      type="button"
-                      data-trigger-reel="${creator.id}"
-                      title="Upload custom TikTok screenshot"
-                      class="reel-upload-btn opacity-0 group-hover:opacity-100 bg-white/90 text-[#1A1918] p-1.5 rounded-full shadow transition hover:bg-white"
-                    >
-                      <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Center Play Overlay -->
+              <!-- Top Bar -->
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
                 <a
                   href="${creator.link}"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Watch ${creator.handle} on TikTok"
-                  class="absolute inset-0 flex items-center justify-center z-0"
+                  class="bg-black/50 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-1 rounded-full flex items-center gap-1 hover:bg-black/75 transition"
                 >
-                  <div class="w-12 h-12 rounded-full bg-white/25 backdrop-blur-md border border-white/50 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/40 transition duration-300">
-                    <div class="w-0 h-0 border-t-[7px] border-t-transparent border-l-[12px] border-l-white border-b-[7px] border-b-transparent ml-1"></div>
-                  </div>
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#FF0050]"></span>
+                  TikTok
+                  <svg class="w-3 h-3 opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+                  </svg>
                 </a>
-
-                <!-- Bottom Video Overlay -->
-                <div class="absolute bottom-0 inset-x-0 p-4 text-white z-10 space-y-2">
-                  <a
-                    href="${creator.link}"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="inline-block text-xs font-medium text-white/85 hover:text-white hover:underline tracking-wide"
-                  >
-                    ${creator.handle}
-                  </a>
-                  <h3 class="text-sm font-serif font-medium leading-snug text-white line-clamp-2">
-                    ${creator.hook}
-                  </h3>
-                  <button
-                    type="button"
-                    data-jump-product="${creator.productId}"
-                    class="jump-product-btn w-full mt-1 bg-white/95 hover:bg-white text-[#1A1918] py-2 px-3 rounded-xl text-[11px] font-semibold flex items-center justify-between transition shadow-sm"
-                  >
-                    <span class="truncate">${creator.tag}</span>
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
               </div>
 
-              <!-- Caption Below Card -->
-              <div class="pt-3 px-1">
+              <!-- Center Play Overlay -->
+              <a
+                href="${creator.link}"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Watch ${creator.handle} on TikTok"
+                class="absolute inset-0 flex items-center justify-center z-0"
+              >
+                <div class="w-12 h-12 rounded-full bg-white/25 backdrop-blur-md border border-white/50 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/40 transition duration-300">
+                  <div class="w-0 h-0 border-t-[7px] border-t-transparent border-l-[12px] border-l-white border-b-[7px] border-b-transparent ml-1"></div>
+                </div>
+              </a>
+
+              <!-- Bottom Video Overlay -->
+              <div class="absolute bottom-0 inset-x-0 p-4 text-white z-10 space-y-2">
                 <a
                   href="${creator.link}"
                   target="_blank"
                   rel="noreferrer"
-                  class="text-xs font-semibold text-[#555] hover:text-black transition block"
+                  class="inline-block text-xs font-medium text-white/85 hover:text-white hover:underline tracking-wide"
                 >
                   ${creator.handle}
                 </a>
-                <p class="text-sm font-medium text-[#1A1918] mt-0.5 leading-snug">
+                <h3 class="text-sm font-serif font-medium leading-snug text-white line-clamp-2">
                   ${creator.hook}
-                </p>
+                </h3>
+                <button
+                  type="button"
+                  data-jump-product="${creator.productId}"
+                  class="jump-product-btn w-full mt-1 bg-white/95 hover:bg-white text-[#1A1918] py-2 px-3 rounded-xl text-[11px] font-semibold flex items-center justify-between transition shadow-sm"
+                >
+                  <span class="truncate">${creator.tag}</span>
+                  <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
-          `;
-        }).join('');
 
-        // Bind Jump-to-Product buttons
+            <!-- Caption Below Card -->
+            <div class="pt-3 px-1">
+              <a
+                href="${creator.link}"
+                target="_blank"
+                rel="noreferrer"
+                class="text-xs font-semibold text-[#555] hover:text-black transition block"
+              >
+                ${creator.handle}
+              </a>
+              <p class="text-sm font-medium text-[#1A1918] mt-0.5 leading-snug">
+                ${creator.hook}
+              </p>
+            </div>
+          </div>
+        `).join('');
+
         els.reelsGrid.querySelectorAll('.jump-product-btn').forEach((btn) => {
           btn.addEventListener('click', () => jumpToProduct(btn.dataset.jumpProduct));
-        });
-
-        // Bind Custom Reel Cover Uploads
-        els.reelsGrid.querySelectorAll('.reel-upload-btn').forEach((btn) => {
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const reelId = btn.dataset.triggerReel;
-            const input = els.reelsGrid.querySelector(`input[data-reel-input="${reelId}"]`);
-            if (input) input.click();
-          });
-        });
-
-        els.reelsGrid.querySelectorAll('.reel-cover-input').forEach((input) => {
-          input.addEventListener('change', (e) => {
-            try {
-              const file = e.target.files[0];
-              if (!file) return;
-              const reelId = input.dataset.reelInput;
-              const reader = new FileReader();
-              reader.onloadend = () => {
-                state.customReelCovers[reelId] = reader.result;
-                renderTikTokReels();
-                showToast('Creator reel cover updated');
-              };
-              reader.readAsDataURL(file);
-            } catch (err) {
-              console.error('Reel cover upload error:', err);
-            }
-          });
         });
       }
 
@@ -1066,20 +1012,18 @@
         }, 280);
       }
 
-      function addToCart(product, variant) {
-        const key = `${product.id}-${variant.id}`;
-        const existing = state.cart.find((item) => item.key === key);
+      function addToCart(product) {
+        const existing = state.cart.find((item) => item.id === product.id);
         if (existing) {
           existing.qty += 1;
         } else {
           state.cart.push({
-            key,
-            productId: product.id,
+            id: product.id,
             name: product.name,
-            variantLabel: variant.label,
-            size: variant.size,
+            size: product.size,
             qty: 1,
-            image: state.customPhotos[product.id] || product.defaultImage
+            image: product.image,
+            fallbackImage: product.fallbackImage
           });
         }
         renderCart();
@@ -1087,9 +1031,9 @@
         openCartDrawer();
       }
 
-      function updateCartQty(key, delta) {
+      function updateCartQty(id, delta) {
         state.cart = state.cart
-          .map((item) => (item.key === key ? { ...item, qty: item.qty + delta } : item))
+          .map((item) => (item.id === id ? { ...item, qty: item.qty + delta } : item))
           .filter((item) => item.qty > 0);
         renderCart();
       }
@@ -1115,7 +1059,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 10a4 4 0 01-8 0" />
               </svg>
               <p class="text-sm font-medium text-[#666]">Your order list is currently empty.</p>
-              <p class="text-xs text-[#888]">Select a variant and click "Add to Order" on any product card.</p>
+              <p class="text-xs text-[#888]">Click "Add to Order" on any product card to start your list.</p>
             </div>
           `;
           return;
@@ -1124,23 +1068,22 @@
         els.cartFooter.classList.remove('hidden');
         els.cartItemsContainer.innerHTML = state.cart.map((item) => `
           <div class="flex gap-4 p-4 rounded-2xl bg-[#FAF9F6] border border-[#EAE6DF] items-center">
-            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover bg-white flex-shrink-0 border border-[#E5E2DA]" />
+            <img src="${item.image}" onerror="this.src='${item.fallbackImage}'" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover bg-white flex-shrink-0 border border-[#E5E2DA]" />
             <div class="flex-1 min-w-0">
               <h4 class="font-serif text-sm font-medium text-[#1A1918] truncate">${item.name}</h4>
-              <p class="text-xs text-[#555] truncate">${item.variantLabel}</p>
-              <p class="text-[10px] text-[#888] truncate">${item.size}</p>
+              <p class="text-[11px] text-[#666] truncate">${item.size}</p>
             </div>
             <div class="flex items-center gap-2">
-              <button type="button" data-qty-key="${item.key}" data-qty-delta="-1" class="cart-qty-btn w-7 h-7 rounded-full bg-white border border-[#DDD] flex items-center justify-center text-xs hover:bg-[#EEE]">-</button>
+              <button type="button" data-qty-id="${item.id}" data-qty-delta="-1" class="cart-qty-btn w-7 h-7 rounded-full bg-white border border-[#DDD] flex items-center justify-center text-xs hover:bg-[#EEE]">-</button>
               <span class="text-xs font-semibold w-4 text-center">${item.qty}</span>
-              <button type="button" data-qty-key="${item.key}" data-qty-delta="1" class="cart-qty-btn w-7 h-7 rounded-full bg-white border border-[#DDD] flex items-center justify-center text-xs hover:bg-[#EEE]">+</button>
+              <button type="button" data-qty-id="${item.id}" data-qty-delta="1" class="cart-qty-btn w-7 h-7 rounded-full bg-white border border-[#DDD] flex items-center justify-center text-xs hover:bg-[#EEE]">+</button>
             </div>
           </div>
         `).join('');
 
         els.cartItemsContainer.querySelectorAll('.cart-qty-btn').forEach((btn) => {
           btn.addEventListener('click', () => {
-            updateCartQty(btn.dataset.qtyKey, Number(btn.dataset.qtyDelta));
+            updateCartQty(btn.dataset.qtyId, Number(btn.dataset.qtyDelta));
           });
         });
       }
@@ -1158,7 +1101,6 @@
 
         state.cart.forEach((item, idx) => {
           msg += `${idx + 1}. *${item.name}*\n`;
-          msg += `   Variant: ${item.variantLabel}\n`;
           if (item.size) msg += `   Specs: ${item.size}\n`;
           msg += `   Qty: ${item.qty}\n\n`;
         });
@@ -1169,7 +1111,6 @@
         window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
       }
 
-      // Bind Cart Drawer & Keyboard Escape Events
       els.cartOpenBtn.addEventListener('click', openCartDrawer);
       els.cartCloseBtn.addEventListener('click', closeCartDrawer);
       els.cartBackdrop.addEventListener('click', closeCartDrawer);
